@@ -3,10 +3,10 @@ steps:
     args:
       - functions
       - deploy
-      - function_ejercicio_gcp
+      - function_uwee
       - --runtime
       - python39
       - --source=./cloud_function
       - --trigger-bucket
-      - gs://ejercicio_completo_gcp
+      - gs://ejercicio_completo
       - --region=europe-west1
