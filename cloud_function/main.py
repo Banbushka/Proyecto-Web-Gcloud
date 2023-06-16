@@ -1,4 +1,4 @@
-def hello_gcs(event, context):
+def function_uwee(event, context):
     """Triggered by a change to a Cloud Storage bucket.
     Args:
          event (dict): Event payload.
