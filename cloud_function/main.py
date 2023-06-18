@@ -21,7 +21,9 @@ def function_uwee(event, context):
 
         # Guardar los datos en Cloud Firestore
         firestore_client = firestore.Client()
-        collection = firestore_client.collection('users')
+        collection_name = 'users'  # Cambiar el nombre de la colección aquí
+        collection = firestore_client.collection(collection_name)
+        #collection = firestore_client.collection('users')
         collection.document().set(data)
 
         return 'Datos guardados en Cloud Firestore'
