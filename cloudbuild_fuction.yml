@@ -8,5 +8,5 @@ steps:
       - python39
       - --source=./cloud_function
       - --trigger-bucket
-      - gs://ejercicio_completo
+      - gs://uwee
       - --region=europe-west1
