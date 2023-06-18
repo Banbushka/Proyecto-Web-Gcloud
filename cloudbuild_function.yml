@@ -1,0 +1,13 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - functions
+      - deploy
+      - function_uwee
+      - --runtime
+      - python39
+      - --source=./cloud_function
+      - --trigger-bucket
+      - gs://uwee
+      - --allow-unauthenticated
+      - --region=europe-west1
