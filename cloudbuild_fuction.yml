@@ -9,4 +9,5 @@ steps:
       - --source=./cloud_function
       - --trigger-bucket
       - gs://uwee
+      - --allow-unauthenticated
       - --region=europe-west1
