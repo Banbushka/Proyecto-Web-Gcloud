@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from google.cloud import storage, firestore
+from google.cloud import storage, datastore
 import json
 import time
 
@@ -10,10 +10,8 @@ storage_client = storage.Client()
 bucket_name = 'uwee'  # Reemplaza con el nombre de tu bucket en Google Cloud Storage
 bucket = storage_client.bucket(bucket_name)
 
-# Configura la conexión a Firestore
-firestore_db = firestore.Client()
-collection_name = 'users'  # Reemplaza con el nombre de tu colección en Firestore
-collection = firestore_db.collection(collection_name)
+# Configura la conexión a Datastore
+datastore_client = datastore.Client()
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -44,14 +42,15 @@ def index():
         # Redirecciona a la misma página para recargar
         return redirect(url_for('index'))
 
-    # Obtiene todos los usuarios de la colección en Firestore
+    # Obtiene todos los usuarios de Datastore
     users = []
-    docs = collection.get()
+    query = datastore_client.query(kind='users')
+    docs = query.fetch()
     for doc in docs:
-        users.append(doc.to_dict())
+        users.append(doc)
 
     return render_template('index.html', users=users)
 
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(host='0.0.0.0', port=5000)
