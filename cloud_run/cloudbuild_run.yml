@@ -21,6 +21,6 @@ steps:
         - --region=europe-west1
         - --platform=managed
         - --allow-unauthenticated
-        - --port=8080
+        - --port=5000
 
 
