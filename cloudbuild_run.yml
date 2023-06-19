@@ -17,7 +17,7 @@ steps:
         - run
         - deploy
         - mi-servicio-uwee
-        - --image=gcr.io/bootcamp-thebridgecloud/APP_UWEE
+        - --image=gcr.io/bootcamp-thebridgecloud/app_uwee
         - --region=europe-west1
         - --platform=managed
         - --allow-unauthenticated
