@@ -53,8 +53,4 @@ def index():
 
 
 if __name__ == '__main__':
-<<<<<<<<< Temporary merge branch 1
-    app.run(port=8080)
-=========
     app.run(host='0.0.0.0', port=5000)
->>>>>>>>> Temporary merge branch 2
