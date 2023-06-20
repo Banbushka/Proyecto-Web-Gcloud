@@ -22,7 +22,12 @@ def function_uwee(event, context):
         # Guardar los datos en Datastore
         datastore_client = datastore.Client()
         kind = 'users'  # Cambiar el nombre del tipo de entidad aquí
+
+        # Crear una nueva entidad
+        entity = datastore.Entity(datastore_client.key(kind))
         entity.update(data)
+
+        # Guardar la entidad en Datastore
         datastore_client.put(entity)
 
         return 'Datos guardados en Datastore'
