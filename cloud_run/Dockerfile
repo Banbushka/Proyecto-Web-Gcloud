@@ -20,7 +20,7 @@ COPY static/ static/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expone el puerto en el que se ejecuta la aplicación
-EXPOSE 8080
+EXPOSE 5000
 
 # Define el comando para iniciar la aplicación
 CMD ["python", "web.py"]
