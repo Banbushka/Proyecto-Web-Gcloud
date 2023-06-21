@@ -1,6 +1,10 @@
-# Este es el readme de mi proyecto de goglecloud. Bienvenido.
-## El ejercicio trata de montar una app formulario, que recoja datos mediante un html los guarde en modo json en un bucket de google storage y que mediante una cloud function se guarde automaticamente en una tabla de firestore. Por ultimo nos muestra los datos guardados en nuestra web.
-## La segunda parte del ejercicio es que todo este se realize mediante un cloud build conectado a este repositorio, para que se active cuando se ejecute un commit en la rama de main.
+# Bienvenido a mi primer proyecto de con Gcloud
+
+* Este proyecto consta de dos partes.
+
+1- Montar una app web que recoja datos introducidos por el cliente, los guarde en una base de datos, que a su vez traspase estos datos a una tabla de datos y qu se muestren por al app, todo esto con los servicios de Gcloud.
+
+2- Realizar tanto el deployment de la cloud function y de la cloud run utilizadas para levantar toda la app, mediante dos activadores conectados a este repositorio, tal que al realizar un commit em alguna d elas carpetas asociadas se lanzen los deployments.
 Lo primero es deciros como estan organizadas mis carpetas.
 
 Come veis tenemos una archivo llamado cloudbuil_function.yml el cual hace el deployment de la funcion que necesitamos para que nuestro programa funcione bien, si observais se conecta con nuestra carpeta cloud_function.
